@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NDSoft.SqlTools.Lib", "NDSo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NDSoft.SqlTools.WPF", "NDSoft.SqlTools.WPF\NDSoft.SqlTools.WPF.csproj", "{77C4EE58-3911-46E8-9232-6A7A3EE3BCBB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NDSoft.WPF", "NDSoft.WPF\NDSoft.WPF.csproj", "{1EC5A73A-69A7-41F7-9B1A-896D8655D387}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{77C4EE58-3911-46E8-9232-6A7A3EE3BCBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77C4EE58-3911-46E8-9232-6A7A3EE3BCBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77C4EE58-3911-46E8-9232-6A7A3EE3BCBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EC5A73A-69A7-41F7-9B1A-896D8655D387}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EC5A73A-69A7-41F7-9B1A-896D8655D387}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EC5A73A-69A7-41F7-9B1A-896D8655D387}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EC5A73A-69A7-41F7-9B1A-896D8655D387}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

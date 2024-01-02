@@ -18,10 +18,16 @@ namespace NDSoft.SqlTools.WPF;
 /// </summary>
 public partial class dlgConnection : Window
 {
-   public dlgConnection()
+   internal dlgConnection()
    {
       InitializeComponent();
+      Model = (dlgConnectionModel)this.DataContext;
    }
 
-   public string ConnectionString { get; internal set; }
+   public string ConnectionString
+   {
+      get => Model.Connection.ConnectionString;
+      internal set => Model.Connection = SqlTools.Lib.SQLConStringDefinition.BuildFromString(value);
+   }
+   public dlgConnectionModel Model { get; }
 }

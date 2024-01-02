@@ -8,7 +8,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="..\NDSoft.SqlTools\Resources\Approve32x32_Transparent.png" Link="Resources\Approve32x32_Transparent.png" />
+    <Content Include="..\NDSoft.SqlTools\Resources\DeleteRed.png" Link="Resources\DeleteRed.png" />
+    <Content Include="..\NDSoft.SqlTools\Resources\DeleteRed_22x22.png" Link="Resources\DeleteRed_22x22.png" />
+    <Content Include="..\NDSoft.SqlTools\Resources\Edit.png" Link="Resources\Edit.png" />
+    <Content Include="..\NDSoft.SqlTools\Resources\NewFile.png" Link="Resources\NewFile.png" />
+    <Content Include="..\NDSoft.SqlTools\Resources\Search.png" Link="Resources\Search.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\NDSoft.SqlTools.Lib\NDSoft.SqlTools.Lib.csproj" />
+    <ProjectReference Include="..\NDSoft.WPF\NDSoft.WPF.csproj" />
   </ItemGroup>
 
 </Project>

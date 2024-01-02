@@ -1,0 +1,7 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Image x:Key="Approve"   x:Name="Approve"  Source="/NDSoft.SqlTools.WPF;component/Resources/Approve32x32_Transparent.png" />
+    <Image x:Key="Add" x:Name="Add" Source="/NDSoft.SqlTools.WPF;component/Resources/NewFile.png" />
+    <Image x:Key="Delete" x:Name="Delete" Source="/NDSoft.SqlTools.WPF;component/Resources/DeleteRed_22x22.png" />
+
+</ResourceDictionary>
