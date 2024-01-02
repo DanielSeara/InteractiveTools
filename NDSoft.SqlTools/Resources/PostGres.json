@@ -1,0 +1,354 @@
+﻿{
+  "Columns": [
+    {
+      "SQLServer": "bigint",
+      "HasSize": false,
+      "HasPrecision": false,
+      "HasScale": false,
+      "PostgresSQL": {
+        "IdentityType": "serial",
+        "NativeColumn": "int8"
+      }
+    },
+    {
+      "SQLServer": "binary",
+      "HasSize": false,
+      "HasPrecision": false,
+      "HasScale": false,
+      "PostgresSQL": {
+        "IdentityType": null,
+        "NativeColumn": "bytea"
+      }
+    },
+    {
+      "SQLServer": "bit",
+      "HasSize": false,
+      "HasPrecision": false,
+      "HasScale": false,
+      "PostgresSQL": {
+        "IdentityType": null,
+        "NativeColumn": "boolean"
+      }
+    },
+    {
+      "SQLServer": "char",
+      "HasSize": false,
+      "HasPrecision": false,
+      "HasScale": false,
+      "PostgresSQL": {
+        "IdentityType": null,
+        "NativeColumn": "char"
+      }
+    },
+    {
+      "SQLServer": "cursor",
+      "HasSize": false,
+      "HasPrecision": false,
+      "HasScale": false,
+      "PostgresSQL": {
+        "IdentityType": null,
+        "NativeColumn": ""
+      }
+    },
+    {
+      "SQLServer": "date",
+      "HasSize": false,
+      "HasPrecision": false,
+      "HasScale": false,
+      "PostgresSQL": {
+        "IdentityType": null,
+        "NativeColumn": "date"
+      }
+    },
+    {
+      "SQLServer": "datetime",
+      "HasSize": false,
+      "HasPrecision": false,
+      "HasScale": false,
+      "PostgresSQL": {
+        "IdentityType": null,
+        "NativeColumn": "timestamp"
+      }
+    },
+    {
+      "SQLServer": "datetime2",
+      "HasSize": false,
+      "HasPrecision": false,
+      "HasScale": false,
+      "PostgresSQL": {
+        "IdentityType": null,
+        "NativeColumn": "timestamp"
+      }
+    },
+    {
+      "SQLServer": "datetimeoffset",
+      "HasSize": false,
+      "HasPrecision": false,
+      "HasScale": false,
+      "PostgresSQL": {
+        "IdentityType": null,
+        "NativeColumn": "timestamptz"
+      }
+    },
+    {
+      "SQLServer": "decimal",
+      "HasSize": false,
+      "HasPrecision": true,
+      "HasScale": true,
+      "PostgresSQL": {
+        "IdentityType": null,
+        "NativeColumn": "decimal"
+      }
+    },
+    {
+      "SQLServer": "float",
+      "HasSize": false,
+      "HasPrecision": true,
+      "HasScale": false,
+      "PostgresSQL": {
+        "IdentityType": null,
+        "NativeColumn": "real"
+      }
+    },
+    {
+      "SQLServer": "hierarchyid",
+      "HasSize": false,
+      "HasPrecision": false,
+      "HasScale": false,
+      "PostgresSQL": {
+        "IdentityType": null,
+        "NativeColumn": ""
+      }
+    },
+    {
+      "SQLServer": "image",
+      "HasSize": false,
+      "HasPrecision": false,
+      "HasScale": false,
+      "PostgresSQL": {
+        "IdentityType": null,
+        "NativeColumn": "bytea"
+      }
+    },
+    {
+      "SQLServer": "int",
+      "HasSize": false,
+      "HasPrecision": false,
+      "HasScale": false,
+      "PostgresSQL": {
+        "IdentityType": "serial",
+        "NativeColumn": "integer"
+      }
+    },
+    {
+      "SQLServer": "money",
+      "HasSize": false,
+      "HasPrecision": false,
+      "HasScale": false,
+      "PostgresSQL": {
+        "IdentityType": null,
+        "NativeColumn": "money"
+      }
+    },
+    {
+      "SQLServer": "nchar",
+      "HasSize": true,
+      "HasPrecision": false,
+      "HasScale": false,
+      "PostgresSQL": {
+        "IdentityType": null,
+        "NativeColumn": "char"
+      }
+    },
+    {
+      "SQLServer": "ntext",
+      "HasSize": false,
+      "HasPrecision": false,
+      "HasScale": false,
+      "PostgresSQL": {
+        "IdentityType": null,
+        "NativeColumn": "varchar"
+      }
+    },
+    {
+      "SQLServer": "numeric",
+      "HasSize": false,
+      "HasPrecision": true,
+      "HasScale": true,
+      "PostgresSQL": {
+        "IdentityType": null,
+        "NativeColumn": "numeric"
+      }
+    },
+    {
+      "SQLServer": "nvarchar",
+      "HasSize": true,
+      "HasPrecision": false,
+      "HasScale": false,
+      "PostgresSQL": {
+        "IdentityType": null,
+        "NativeColumn": "varchar"
+      }
+    },
+    {
+      "SQLServer": "real",
+      "HasSize": false,
+      "HasPrecision": false,
+      "HasScale": false,
+      "PostgresSQL": {
+        "IdentityType": null,
+        "NativeColumn": "float8"
+      }
+    },
+    {
+      "SQLServer": "rowversion",
+      "HasSize": false,
+      "HasPrecision": false,
+      "HasScale": false,
+      "PostgresSQL": {
+        "IdentityType": null,
+        "NativeColumn": ""
+      }
+    },
+    {
+      "SQLServer": "smalldatetime",
+      "HasSize": false,
+      "HasPrecision": false,
+      "HasScale": false,
+      "PostgresSQL": {
+        "IdentityType": null,
+        "NativeColumn": "timestamp"
+      }
+    },
+    {
+      "SQLServer": "smallint",
+      "HasSize": false,
+      "HasPrecision": false,
+      "HasScale": false,
+      "PostgresSQL": {
+        "IdentityType": "serial",
+        "NativeColumn": "smallint"
+      }
+    },
+    {
+      "SQLServer": "smallmoney",
+      "HasSize": false,
+      "HasPrecision": false,
+      "HasScale": false,
+      "PostgresSQL": {
+        "IdentityType": null,
+        "NativeColumn": "money"
+      }
+    },
+    {
+      "SQLServer": "geography",
+      "HasSize": false,
+      "HasPrecision": false,
+      "HasScale": false,
+      "PostgresSQL": {
+        "IdentityType": null,
+        "NativeColumn": "text"
+      }
+    },
+    {
+      "SQLServer": "geometry",
+      "HasSize": false,
+      "HasPrecision": false,
+      "HasScale": false,
+      "PostgresSQL": {
+        "IdentityType": null,
+        "NativeColumn": "path"
+      }
+    },
+    {
+      "SQLServer": "sql_variant",
+      "HasSize": false,
+      "HasPrecision": false,
+      "HasScale": false,
+      "PostgresSQL": {
+        "IdentityType": null,
+        "NativeColumn": ""
+      }
+    },
+    {
+      "SQLServer": "table",
+      "HasSize": false,
+      "HasPrecision": false,
+      "HasScale": false,
+      "PostgresSQL": {
+        "IdentityType": null,
+        "NativeColumn": ""
+      }
+    },
+    {
+      "SQLServer": "text",
+      "HasSize": false,
+      "HasPrecision": false,
+      "HasScale": false,
+      "PostgresSQL": {
+        "IdentityType": null,
+        "NativeColumn": "varchar"
+      }
+    },
+    {
+      "SQLServer": "time",
+      "HasSize": false,
+      "HasPrecision": false,
+      "HasScale": false,
+      "PostgresSQL": {
+        "IdentityType": null,
+        "NativeColumn": "time"
+      }
+    },
+    {
+      "SQLServer": "tinyint",
+      "HasSize": false,
+      "HasPrecision": false,
+      "HasScale": false,
+      "PostgresSQL": {
+        "IdentityType": null,
+        "NativeColumn": ""
+      }
+    },
+    {
+      "SQLServer": "uniqueidentifier",
+      "HasSize": false,
+      "HasPrecision": false,
+      "HasScale": false,
+      "PostgresSQL": {
+        "IdentityType": null,
+        "NativeColumn": "uuid"
+      }
+    },
+    {
+      "SQLServer": "varbinary",
+      "HasSize": true,
+      "HasPrecision": false,
+      "HasScale": false,
+      "PostgresSQL": {
+        "IdentityType": null,
+        "NativeColumn": "bytea"
+      }
+    },
+    {
+      "SQLServer": "varchar",
+      "HasSize": true,
+      "HasPrecision": false,
+      "HasScale": false,
+      "PostgresSQL": {
+        "IdentityType": null,
+        "NativeColumn": "varchar"
+      }
+    },
+    {
+      "SQLServer": "XML",
+      "HasSize": false,
+      "HasPrecision": false,
+      "HasScale": false,
+      "PostgresSQL": {
+        "IdentityType": null,
+        "NativeColumn": ""
+      }
+    }
+  ]
+}

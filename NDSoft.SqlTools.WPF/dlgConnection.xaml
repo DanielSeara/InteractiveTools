@@ -1,0 +1,60 @@
+﻿<Window x:Class="NDSoft.SqlTools.WPF.dlgConnection"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NDSoft.SqlTools.WPF"
+        mc:Ignorable="d"
+        Title="dlgConnection" Height="450" Width="800">
+    <Grid>
+        <Grid.DataContext>
+            <local:dlgConnectionModel/>
+        </Grid.DataContext>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  Width="Auto"></ColumnDefinition>
+            <ColumnDefinition  Width="Auto" MinWidth="100"></ColumnDefinition>
+            <ColumnDefinition Width="Auto" MinWidth="100"></ColumnDefinition>
+            <ColumnDefinition  Width="Auto" MinWidth="100"></ColumnDefinition>
+            <ColumnDefinition  Width="Auto" MinWidth="100"></ColumnDefinition>
+            <ColumnDefinition  Width="Auto" MinWidth="40"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="1" Grid.Column="0">Server:</Label>
+        <Label Grid.Row="2" Grid.Column="0">Auth:</Label>
+        <Label Grid.Row="3" Grid.Column="0">Username:</Label>
+        <Label Grid.Row="4" Grid.Column="0">Password:</Label>
+        <Label Grid.Row="5" Grid.Column="0">Database:</Label>
+        <Label Grid.Row="6" Grid.Column="0">Application Name:</Label>
+        <ComboBox x:Name="cbServer" Grid.Row="1" Grid.Column="1"   VerticalAlignment="Center" Width="Auto" ItemsSource="{Binding Servers}"/>
+        <ComboBox x:Name="cbAuth" Grid.Row="2" Grid.Column="1"   VerticalAlignment="Center" Width="Auto" ItemsSource="{Binding Current.AuthenticationMethodsList, Mode=OneWay}"/>
+        <TextBox x:Name="txtUsername" Grid.Column="1" HorizontalAlignment="Left"  Grid.Row="3" MinWidth="200" Text="{Binding Current.Username}" VerticalAlignment="Center" Width="Auto"/>
+        <PasswordBox x:Name="txtPassword" Grid.Column="1"  Grid.Row="4"  VerticalAlignment="Center" Width="Auto" />
+        <ComboBox x:Name="cbDatabase" Grid.Row="5" Grid.Column="1"   VerticalAlignment="Center" Width="Auto" ItemsSource="{Binding Databases}"/>
+        <TextBox x:Name="txtAppName" Grid.Column="1"  Grid.Row="6"  Text="{Binding Current.ApplicationName}" VerticalAlignment="Center" Width="Auto"/>
+        <Grid Grid.Row="7" Grid.ColumnSpan="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label  Grid.Column="0">Trust Certificate:</Label>
+            <Label  Grid.Column="2">Encrypt:</Label>
+            <Label  Grid.Column="4">MARS:</Label>
+            <CheckBox x:Name="chkCert" Grid.Column="1"  HorizontalAlignment="Left"   VerticalAlignment="Center" IsChecked="{Binding Current.TrustServerCertificate}"/>
+            <CheckBox x:Name="chkEncrypt" Grid.Column="3"  HorizontalAlignment="Left"   VerticalAlignment="Center" IsChecked="{Binding Current.Encrypt}"/>
+            <CheckBox x:Name="chkMARS" Grid.Column="5"  HorizontalAlignment="Left"   VerticalAlignment="Center" IsChecked="{Binding Current.MultipleActiveResultSets}"/>
+        </Grid>
+    </Grid>
+</Window>
