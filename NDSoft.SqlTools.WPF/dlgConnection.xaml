@@ -6,46 +6,48 @@
         xmlns:local="clr-namespace:NDSoft.SqlTools.WPF"
         xmlns:WPF="clr-namespace:NDSoft.WPF;assembly=NDSoft.WPF" x:Class="NDSoft.SqlTools.WPF.dlgConnection"
         mc:Ignorable="d"
-        Title="dlgConnection" Height="450" Width="800">
+        Title="dlgConnection" Height="250" Width="430">
     <Window.Resources>
         <WPF:VisibilityConverter x:Key="VisibilityConverter"/>
     </Window.Resources>
     <Window.DataContext>
         <local:dlgConnectionModel/>
     </Window.DataContext>
-    <Grid>
+    <Grid >
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition  Width="Auto"/>
+            <ColumnDefinition  Width="Auto" MinWidth="110"/>
             <ColumnDefinition  Width="Auto" MinWidth="100"/>
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition  Width="Auto" />
-            <ColumnDefinition  Width="Auto" MinWidth="100"/>
-            <ColumnDefinition  Width="Auto" MinWidth="40"/>
+            <ColumnDefinition  Width="Auto" />
+            <ColumnDefinition  Width="Auto" MinWidth="4"/>
+            <ColumnDefinition Width="45*"/>
+            <ColumnDefinition Width="103*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" MinHeight="5"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" MinHeight="5"/>
         </Grid.RowDefinitions>
-        <Label Grid.Row="1" Grid.Column="0" Content="Server:"/>
-        <Label Grid.Row="2" Grid.Column="0" Content="Auth:"/>
-        <Label Grid.Row="3" Grid.Column="0" Content="Username:"/>
-        <Label Grid.Row="4" Grid.Column="0" Content="Password:"/>
-        <Label Grid.Row="5" Grid.Column="0" Content="Database:"/>
-        <Label Grid.Row="6" Grid.Column="0" Content="Application Name:"/>
-        <ComboBox x:Name="cbServer" Grid.Row="1" Grid.Column="1"   VerticalAlignment="Center" Width="Auto" ItemsSource="{Binding Servers}"/>
-        <ComboBox x:Name="cbAuth" Grid.Row="2" Grid.Column="1"   VerticalAlignment="Center" Width="Auto" ItemsSource="{Binding Current.AuthenticationMethodsList, Mode=OneWay}"/>
-        <TextBox x:Name="txtUsername" Grid.Column="1" HorizontalAlignment="Left"  Grid.Row="3" MinWidth="200" Text="{Binding Current.Username}" VerticalAlignment="Center" Width="Auto"/>
-        <PasswordBox x:Name="txtPassword" Grid.Column="1"  Grid.Row="4"  VerticalAlignment="Center" Width="Auto" />
-        <ComboBox x:Name="cbDatabase" Grid.Row="5" Grid.Column="1"   VerticalAlignment="Center" Width="Auto" ItemsSource="{Binding Databases}"/>
-        <TextBox x:Name="txtAppName" Grid.Column="1"  Grid.Row="6"  Text="{Binding Current.ApplicationName}" VerticalAlignment="Center" Width="Auto"/>
-        <Grid Grid.Row="7" Grid.ColumnSpan="4">
+        <Label Grid.Row="1" Grid.Column="0" Content="Server:" Grid.ColumnSpan="2" Margin="0,0,200,26" Grid.RowSpan="2"/>
+        <Label Grid.Row="2" Grid.Column="0" Content="Auth:" Grid.ColumnSpan="2" Margin="0,0,200,26" Grid.RowSpan="2"/>
+        <Label Grid.Row="3" Grid.Column="0" Content="Username:" Grid.ColumnSpan="2" Margin="0,0,200,26" Grid.RowSpan="2"/>
+        <Label Grid.Row="4" Grid.Column="0" Content="Password:" Grid.ColumnSpan="2" Margin="0,0,200,26" Grid.RowSpan="2"/>
+        <Label Grid.Row="5" Grid.Column="0" Content="Database:" Grid.ColumnSpan="2" Margin="0,0,200,26" Grid.RowSpan="2"/>
+        <Label Grid.Row="6" Grid.Column="0" Content="Application Name:" Grid.ColumnSpan="2" Margin="0,0,200,26" Grid.RowSpan="2"/>
+        <ComboBox x:Name="cbServer" Grid.Row="1" Grid.Column="1"   VerticalAlignment="Center" Width="Auto" ItemsSource="{Binding Servers}" SelectedValue="{Binding Current.Server}" IsEditable="{Binding IsServerEditable}" IsSynchronizedWithCurrentItem="False" Text="{Binding Current.Server}" Grid.ColumnSpan="2" Margin="0,0,22,0"/>
+        <ComboBox x:Name="cbAuth" Grid.Row="2" Grid.Column="1"   VerticalAlignment="Center" Width="Auto" ItemsSource="{Binding Current.AuthenticationMethodsList, Mode=OneWay}" SelectedItem="{Binding Current.AuthenticationMethod}" Grid.ColumnSpan="2" Margin="0,0,22,0"/>
+        <TextBox x:Name="txtUsername" Grid.Column="1" HorizontalAlignment="Center"  Grid.Row="3" MinWidth="200" Text="{Binding Current.Username}" VerticalAlignment="Center" Width="Auto" IsEnabled="{Binding NeedCredentials}"/>
+        <PasswordBox x:Name="txtPassword" Grid.Column="1"  Grid.Row="4"  VerticalAlignment="Center" Width="Auto" IsEnabled="{Binding NeedCredentials, BindsDirectlyToSource=True, NotifyOnSourceUpdated=True}" Grid.ColumnSpan="2" Margin="0,0,22,0" />
+        <ComboBox x:Name="cbDatabase" Grid.Row="5" Grid.Column="1"   VerticalAlignment="Center" Width="Auto" ItemsSource="{Binding Databases}" Grid.ColumnSpan="2" Margin="0,0,22,0" IsDropDownOpen="{Binding ShowDBs}"/>
+        <TextBox x:Name="txtAppName" Grid.Column="1"  Grid.Row="6"  Text="{Binding Current.ApplicationName}" VerticalAlignment="Center" Width="Auto" Grid.ColumnSpan="2" Margin="0,0,22,0"/>
+        <Grid Grid.Row="7" Grid.ColumnSpan="5" Margin="0,0,39,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
@@ -61,12 +63,12 @@
             <CheckBox x:Name="chkEncrypt" Grid.Column="3"  HorizontalAlignment="Left"   VerticalAlignment="Center" IsChecked="{Binding Current.Encrypt}"/>
             <CheckBox x:Name="chkMARS" Grid.Column="5"  HorizontalAlignment="Left"   VerticalAlignment="Center" IsChecked="{Binding Current.MultipleActiveResultSets}"/>
         </Grid>
-        <Button x:Name="AddServer" Grid.Column="2"  HorizontalAlignment="Center"  VerticalAlignment="Center" Width="22" Height="22" Command="{Binding AddServerCommand}">
+        <Button x:Name="AddServer" Grid.Column="2" Grid.Row="1"  HorizontalAlignment="Center"  VerticalAlignment="Center" Width="22" Height="22" Command="{Binding AddServerCommand}">
             <Button.Background>
-                <ImageBrush ImageSource="/NDSoft.SqlTools.WPF;component/Resources/NewFile.png" Stretch="Fill"/>
+                <ImageBrush ImageSource="/NDSoft.SqlTools.WPF;component/NewFile.png" Stretch="Fill"/>
             </Button.Background>
         </Button>
-        <Button x:Name="RemoveServer" Grid.Column="3" HorizontalAlignment="Center"  VerticalAlignment="Center"  Width="22" Height="22" Command="{Binding RemoveServerCommand}">
+        <Button x:Name="RemoveServer" Grid.Column="3" Grid.Row="1"  HorizontalAlignment="Center"  VerticalAlignment="Center"  Width="22" Height="22" Command="{Binding RemoveServerCommand}">
             <Button.Background>
                 <ImageBrush ImageSource="/NDSoft.SqlTools.WPF;component/Resources/DeleteRed_22x22.png"/>
             </Button.Background>
@@ -76,6 +78,9 @@
                 <ImageBrush ImageSource="/NDSoft.SqlTools.WPF;component/Resources/Search.png"/>
             </Button.Background>
         </Button>
-        <Image x:Name="imgIsValid" Grid.Column="4" Grid.Row="5"  Source="/NDSoft.SqlTools.WPF;component/Resources/Approve32x32_Transparent.png" Grid.ColumnSpan="2" Height="26" Margin="0,0,40,0" Grid.RowSpan="2" VerticalAlignment="Top" Visibility="{Binding ConnectionIsOkProperty, Converter={StaticResource VisibilityConverter}}" />
+        <Image x:Name="imgIsValid" Grid.Column="4" Grid.Row="5"  Source="/NDSoft.SqlTools.WPF;component/Resources/Approve32x32_Transparent.png"  Height="26" VerticalAlignment="Center" Visibility="{Binding ConnectionIsOk, Converter={StaticResource VisibilityConverter}}" Grid.ColumnSpan="2" Margin="0,0,4,0" />
+        <Button x:Name="button1" Grid.Column="4" Content="Test"  Grid.Row="4" VerticalAlignment="Top" Command="{Binding TestConnectionCommand}" Grid.ColumnSpan="2" Margin="0,0,4,0"/>
+        <Button x:Name="btnOk" Grid.Row="1" Grid.Column="4" Content="Ok"  VerticalAlignment="Top" IsDefault="True" IsEnabled="{Binding ConnectionIsOk}" Grid.ColumnSpan="2" Margin="0,0,4,0" Click="btnOk_Click"/>
+        <Button x:Name="btnCancel" Grid.Row="2" Grid.Column="4" Content="Cancel" HorizontalAlignment="Center"  VerticalAlignment="Top" IsCancel="True"/>
     </Grid>
 </Window>

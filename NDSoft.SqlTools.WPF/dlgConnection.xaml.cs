@@ -22,12 +22,28 @@ public partial class dlgConnection : Window
    {
       InitializeComponent();
       Model = (dlgConnectionModel)this.DataContext;
+      txtPassword.PasswordChanged += TxtPassword_PasswordChanged;
+      Model.SetFocusInServer += Model_SetFocusInServer;
    }
+
+   private void Model_SetFocusInServer(object? sender, EventArgs e) => cbServer.Focus();
+   private void TxtPassword_PasswordChanged(object sender, RoutedEventArgs e) => Model.Current.Password = txtPassword.Password;
 
    public string ConnectionString
    {
-      get => Model.Connection.ConnectionString;
-      internal set => Model.Connection = SqlTools.Lib.SQLConStringDefinition.BuildFromString(value);
+      get => Model.Current.ConnectionString;
+      internal set
+      {
+         Model.Current = SqlTools.Lib.SQLConStringDefinition.BuildFromString(value);
+         if(Model.Current.UseCredentials) { txtPassword.Password = Model.Current.Password; }
+      }
+
    }
    public dlgConnectionModel Model { get; }
+
+   private void btnOk_Click(object sender, RoutedEventArgs e)
+   {
+      this.DialogResult = true;
+      this.Hide();
+   }
 }

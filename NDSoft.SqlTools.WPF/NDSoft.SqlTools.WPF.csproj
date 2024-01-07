@@ -1,24 +1,39 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
     <ImplicitUsings>enable</ImplicitUsings>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>WPF SQL Connection Dialog</Title>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="..\NDSoft.SqlTools\Resources\Approve32x32_Transparent.png" Link="Resources\Approve32x32_Transparent.png" />
-    <Content Include="..\NDSoft.SqlTools\Resources\DeleteRed.png" Link="Resources\DeleteRed.png" />
-    <Content Include="..\NDSoft.SqlTools\Resources\DeleteRed_22x22.png" Link="Resources\DeleteRed_22x22.png" />
-    <Content Include="..\NDSoft.SqlTools\Resources\Edit.png" Link="Resources\Edit.png" />
-    <Content Include="..\NDSoft.SqlTools\Resources\NewFile.png" Link="Resources\NewFile.png" />
-    <Content Include="..\NDSoft.SqlTools\Resources\Search.png" Link="Resources\Search.png" />
+    <None Remove="NewFile.png" />
+    <None Remove="Resources\Approve32x32_Transparent.png" />
+    <None Remove="Resources\DeleteRed.png" />
+    <None Remove="Resources\DeleteRed_22x22.png" />
+    <None Remove="Resources\Edit.png" />
+    <None Remove="Resources\NewFile.png" />
+    <None Remove="Resources\SchemaSQL.sql" />
+    <None Remove="Resources\Search.png" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\NDSoft.SqlTools.Lib\NDSoft.SqlTools.Lib.csproj" />
     <ProjectReference Include="..\NDSoft.WPF\NDSoft.WPF.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="NewFile.png" />
+    <Resource Include="Resources\Approve32x32_Transparent.png" />
+    <Resource Include="Resources\DeleteRed.png" />
+    <Resource Include="Resources\DeleteRed_22x22.png" />
+    <Resource Include="Resources\Edit.png" />
+    <Resource Include="Resources\NewFile.png" />
+    <Resource Include="Resources\SchemaSQL.sql" />
+    <Resource Include="Resources\Search.png" />
   </ItemGroup>
 
 </Project>

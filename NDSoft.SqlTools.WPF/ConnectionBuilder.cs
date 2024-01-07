@@ -9,6 +9,7 @@ public static class ConnectionBuilder
       if(connectionString is not null)
          dlg.ConnectionString = connectionString;
       var result = dlg.ShowDialog();
+      dlg.Close();
       if(result.HasValue && result.Value)
          return dlg.ConnectionString;
       else
