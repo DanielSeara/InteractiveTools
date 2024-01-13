@@ -68,17 +68,23 @@ public class dlgConnectionModel : DependencyObject, INotifyPropertyChanged
 
    public dlgConnectionModel()
    {
+      CreateCommands();
+      currentConnection = new();
+      Current.RequireCredentials += Connection_RequireCredentials;
+   }
+   private void Connection_RequireCredentials(
+      object? sender,
+      RequireCredentialsEventArgs e)
+      => NeedCredentials = e.NeedCredentials;
+
+   public event PropertyChangedEventHandler? PropertyChanged;
+   private void CreateCommands()
+   {
       CreateAddServerCommand();
       CreateLoadDBsCommand();
       CreateRemoveServerCommand();
       CreateTestConnectionCommand();
-      currentConnection = new();
-      Current.RequireCredentials += Connection_RequireCredentials;
    }
-
-   private void Connection_RequireCredentials(object? sender, RequireCredentialsEventArgs e) => NeedCredentials = e.NeedCredentials;
-
-   public event PropertyChangedEventHandler? PropertyChanged;
 
 
    /// <summary>
